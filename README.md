@@ -1,4 +1,4 @@
-# Modeing Forest Fires using Cellular Automatons 🌳🔥
+# Modeling Forest Fires using Cellular Automatons 🌳🔥
 
 This repository contains a project that models the spread of forest fires using a combination of computational and analytical methods.
 
