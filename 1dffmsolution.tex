@@ -1,0 +1,499 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\DeclareMathSizes{12}{40}{16}{12}
+
+
+
+\usepackage{ amssymb }
+
+\usepackage{amsmath}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{color}
+\usepackage{slashed}
+\usepackage[color]{showkeys} % for cool labelling!
+\definecolor{refkey}{rgb}{1,0,0}
+\definecolor{labelkey}{rgb}{0,0,1}
+\usepackage{bbold,amsfonts,amssymb}
+\usepackage{amsfonts,amssymb,amsmath}
+%\usepackage[active]{srcltx}
+\usepackage{MnSymbol,wasysym}
+\usepackage{esint}
+\usepackage{rotating}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\usepackage{graphicx}
+%\usepackage{subfig}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{showkeys} % for cool labelling!
+\usepackage{booktabs}
+
+\usepackage{listings}
+
+\usepackage{hyperref}
+
+\numberwithin{equation}{section}
+
+\newcommand{\note}[1]{{\bf Note: #1}}
+%\newcommand{\note}{}
+%\usepackage[dvips]{epsfig}
+%\usepackage{amsfonts,amssymb}
+%\usepackage{color}
+%\usepackage{graphicx}
+%\usepackage{subfig}
+%%\usepackage{showkeys} % for cool labelling!
+%%\usepackage{bbold,amsfonts,amssymb}
+%\usepackage{MnSymbol}
+%\DeclareMathAlphabet\mathbb{U}{msb}{m}{n}
+%%\usepackage{MinionPro}
+%%\usepackage[active]{srcltx}
+
+\newcommand{\mch}{\ \ \boxed{\color{red} \mathrm{maple}\ \checkmark}}
+\newcommand{\sch}{\ \ \boxed{\color{red}  \checkmark}}
+\newcommand{\schY}{\ \ \boxed{\color{blue}  \checkmark}}
+\newcommand{\QY}{\ \ \boxed{\color{blue}  ?}}
+\newcommand{\mdef}[1]{\ \ \boxed{\color{red} \mbox{#1 def}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% Macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% Structure definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\eqn}[1]{(\ref{#1})}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ben}{\begin{displaymath}}
+\newcommand{\een}{\end{displaymath}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bean}{\begin{eqnarray*}}
+\newcommand{\eean}{\end{eqnarray*}}
+\newcommand{\nn}{\nonumber \\}
+
+\newtheorem{theorem}{Theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%% Greek Letters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\l {\lambda}
+\def\a {\alpha}
+\def\ap {\alpha'}
+\def\b {\beta}
+\def\g {\gamma}
+\def\G {\Gamma}
+\def\d {\delta}
+\def\s {\sigma}
+\def\e {\epsilon}
+\def\vt {\vartheta}
+\def\vp {\varphi}
+\def\T {\Theta}
+
+\renewcommand{\O}{\Omega}
+\renewcommand{\L}{\Lambda}
+\renewcommand{\t}{\theta}
+
+%%%%%%%%%%%%%%%%%% Calligraphic Letters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\cala}{\mbox{${\cal A}$}}
+\newcommand{\calb}{\mbox{${\cal B}$}}
+\newcommand{\calc}{\mbox{${\cal C}$}}
+\newcommand{\cald}{\mbox{${\cal D}$}}
+\newcommand{\cale}{\mbox{${\cal E}$}}
+\newcommand{\calf}{\mbox{${\cal F}$}}
+\newcommand{\calg}{\mbox{${\cal G}$}}
+\newcommand{\calh}{\mbox{${\cal H}$}}
+\newcommand{\cali}{\mbox{${\cal I}$}}
+\newcommand{\calj}{\mbox{${\cal J}$}}
+\newcommand{\calk}{\mbox{${\cal K}$}}
+\newcommand{\call}{\mbox{${\cal L}$}}
+\newcommand{\calm}{\mbox{${\cal M}$}}
+\newcommand{\caln}{\mbox{${\cal N}$}}
+\newcommand{\calo}{\mbox{${\cal O}$}}
+\newcommand{\calp}{\mbox{${\cal P}$}}
+\newcommand{\calq}{\mbox{${\cal Q}$}}
+\newcommand{\calr}{\mbox{${\cal R}$}}
+\newcommand{\cals}{\mbox{${\cal S}$}}
+\newcommand{\calt}{\mbox{${\cal T}$}}
+\newcommand{\calu}{\mbox{${\cal U}$}}
+\newcommand{\calv}{\mbox{${\cal V}$}}
+\newcommand{\calw}{\mbox{${\cal W}$}}
+\newcommand{\calx}{\mbox{${\cal X}$}}
+\newcommand{\caly}{\mbox{${\cal Y}$}}
+\newcommand{\calz}{\mbox{${\cal Z}$}}
+
+\newcommand{\bfcalc}{\mbox{\boldmath ${\cal C}$}}
+
+
+%%%%%%%%%%%%%%%%% Boldmath Letters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bfe}{\mbox{\boldmath $E$}}
+\newcommand{\bfb}{\mbox{\boldmath $B$}}
+\newcommand{\bfpi}{\mbox{\boldmath $\Pi$}}
+\newcommand{\bfp}{\mbox{\boldmath $P$}}
+\newcommand{\bfna}{\mbox{\boldmath $\nabla$}}
+\newcommand{\bfd}{\mbox{\boldmath $D$}}
+\newcommand{\bfeh}{\mbox{\boldmath $\hat{E}$}}
+\newcommand{\bfbh}{\mbox{\boldmath $\hat{B}$}}
+\newcommand{\bfah}{\mbox{\boldmath $\hat{A}$}}
+\newcommand{\bx}{\mbox{\boldmath $x$}}
+\newcommand{\by}{\mbox{\boldmath $y$}}
+%\newcommand{\bX}{\mbox{\boldmath $X$}}
+\newcommand{\bX}{\ensuremath{\bar{X}}}
+\newcommand{\bY}{\mbox{\boldmath $Y$}}
+\newcommand{\bV}{\mbox{\boldmath $V$}}
+\newcommand{\bU}{\mbox{\boldmath $U$}}
+
+\newcommand{\bfK}{\mbox{\boldmath $K$}}
+\newcommand{\bfz}{\mbox{\boldmath $\theta$}}
+\newcommand{\bfZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bfr}{\mbox{\boldmath $\rho$}}
+\newcommand{\bfxi}{\mbox{\boldmath $\xi$}}
+\newcommand{\bfs}{\mbox{\boldmath $\sigma$}}
+\newcommand{\bft}{\mbox{\boldmath $t$}}
+\newcommand{\bfT}{\mbox{\boldmath $T$}}
+\newcommand{\bfss}{\mbox{\boldmath $s$}}
+\newcommand{\bfS}{\mbox{\boldmath $S$}}
+\newcommand{\bfG}{\mbox{\boldmath $\Gamma$}}
+\newcommand{\bfo}{\mbox{\boldmath $0$}}
+
+\newcommand{\bbe}[1]{\mbox{${\mathbb E}^{#1}$}}
+\newcommand{\bbr}[1]{\mbox{${\mathbb R}^{#1}$}}
+%\newcommand{\bbz}[1]{\mbox{${\mathbb Z}^{#1}$}}
+\newcommand{\bbz}[1]{\mbox{${\mathbb Z}_{#1}$}}
+\newcommand{\bbi}[1]{\mbox{${\mathbb I}_{#1}$}}
+\newcommand{\bbo}[1]{\mbox{${\mathbb O}_{#1}$}}
+
+%%%%%%%%%%%%%%%%%%%%%% Miscellaneous  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nef}{{$\caln =4$} }
+
+\newcommand{\dd}[3]{\mbox{$( #1 | \mbox{D} #2 \perp \mbox{D} #3)$}}
+\newcommand{\ds}[3]{\mbox{$( #1 | D #2 \perp \calt #3)$}}
+\newcommand{\para}{\parallel}
+\newcommand{\inter}{\, \cap \,}
+\newcommand{\su}[1]{$\calt #1\,$}
+
+\newcommand{\ads}[1]{\mbox{${AdS}_{#1}$}}
+\newcommand{\adss}[2]{\mbox{$AdS_{#1}\times {S}^{#2}$}}
+\newcommand{\rn}{Reissner-Nordstr\"{o}m }
+
+\newcommand{\bra}[1]{\mbox{$\langle #1 |$}}
+\newcommand{\ket}[1]{\mbox{$| #1 \rangle$}}
+\newcommand{\braket}[2]{\mbox{$\langle #1  | #2 \rangle$}}
+\newcommand{\proj}[1]{\ket{#1}\!\bra{#1}}
+
+\newcommand{\Gu}[1]{\Gamma_{\underline{#1}}}
+\newcommand{\Gn}{\Gamma_\natural}
+
+\newcommand{\un}{\underline}
+\newcommand{\pa}{\partial}
+\newcommand{\fc}{\frac}
+\newcommand{\w}{\wedge}
+\newcommand{\trace}{\mbox{Tr}}
+\newcommand{\sac}{\ , \qquad}
+\newcommand{\eg}{{\it e.g.}}
+\newcommand{\ie}{{\it i.e.}}
+\newcommand{\sgn}[1]{\mbox{sgn}(#1)}
+\newcommand{\com}[1]{[[[{\bf #1}]]]}
+\newcommand{\ad}{\dot{a}}
+%\newcommand{\bd}{\dot{b}}
+\newcommand{\ik}{{\it k}}
+\newcommand{\ione}{{\it 1}}
+\newcommand{\itwo}{{\it 2}}
+\newcommand{\ifive}{{\it 5}}
+
+\newcommand{\ph}{\hat{P}}
+\newcommand{\xh}{\hat{X}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\tr}{\mbox{Tr}}
+
+\newcommand{\ra}{\rightarrow}
+
+\newcommand{\comment}[1]{{\bf [[[#1]]]}}
+\newcommand{\commentout}[1]{}
+
+\usepackage{amsmath}
+\DeclareMathOperator\atanh{atanh}
+
+%\newcommand{\atmp}[3]{{\it Adv. Theor. Math. Phys.} {\bf #1} {(#2)} #3}
+%\newcommand{\ijtp}[3]{{\it Int. J. Theor. Phys.} {\bf #1} {(#2)} #3}
+
+
+%%%%%%%%%%%%%%%%% Equation Numbering %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\sect}[1]{\setcounter{equation}{0}\section{#1}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+%%%%%%%%%%%%%%%%%%%% Page formatting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\renewcommand{\baselinestretch}{1.4}
+%\hoffset -0.5in % moves text horizontally
+%\textwidth 165mm
+%\textheight 220mm
+%\evensidemargin 0mm
+%\topmargin -15mm
+%\headsep 1.3cm
+%\footskip 20mm
+%\headheight 0pt
+
+
+%%%%%%%%%%%%%%%%%% For this paper %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqr}{\begin{displaymath}}
+\newcommand{\eeqr}{\end{displaymath}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\beqar}{\begin{eqnarray*}}
+\newcommand{\eeqar}{\end{eqnarray*}}
+%\newcommand{\htx}{s} %\hat{t}}
+%\renewcommand{\a}{\alpha}
+%\newcommand{\ap}{\alpha'}
+%\renewcommand{\b}{\beta}
+%\renewcommand{\d}{\delta}
+%\newcommand{\D}{\Delta}
+%\newcommand{\e}{\epsilon}
+%\newcommand{\g}{\gamma}
+%\newcommand{\G}{\Gamma}
+\renewcommand{\k}{\kappa}
+%\renewcommand{\l}{\lambda}
+%\renewcommand{\L}{\Lambda}
+\newcommand{\m}{\mu}
+\newcommand{\n}{\nu}
+\newcommand{\p}{\phi}
+%\renewcommand{\o}{\omega}
+%\renewcommand{\O}{\Omega}
+%\renewcommand{\P}{\Phi}
+%\newcommand{\p}{\phi}
+%\newcommand{\Ps}{\Psi}
+\renewcommand{\r}{\rho}
+\newcommand{\vr}{\varrho}
+%\newcommand{\s}{\sigma}
+%\renewcommand{\t}{\theta}
+%\newcommand{\vt}{\vartheta}
+%\newcommand{\ve}{\varepsilon}
+%\newcommand{\z}{\zeta}
+%\newcommand{\x}{\xi}
+%\newcommand{\cM}{{\cal M}}
+%\newcommand{\cA}{{\cal A}}
+\newcommand{\cH}{{\cal H}}
+%\newcommand{\cG}{{\cal G}}
+%\newcommand{\cS}{{\cal S}}
+\newcommand{\cN}{{\cal N}}
+\newcommand{\cD}{{\cal D}}
+\newcommand{\cO}{{\cal O}}
+%\newcommand{\cF}{{\cal F}}
+\newcommand{\cL}{{\cal L}}
+\newcommand{\ssc}{\scriptscriptstyle}
+%%\newcommand{\eg}{{\it e.g.}}
+%%\newcommand{\ie}{{\it i.e.}}
+%\newcommand{\etal}{{\it et al.~}}
+\newcommand{\labell}[1]{\label{#1}\qquad_{#1}} %{\label{#1}}
+%\newcommand{\labels}[1]{\label{#1}} %{\vskip-.6cm${#1}$\label{#1}}
+\newcommand{\reef}[1]{(\ref{#1})}
+\newcommand{\non}{\nonumber}
+\newcommand{\pf}{\partial}
+%\renewcommand{\ni}{\vspace{0.2cm}\noindent}
+%\newcommand{\dir}[1]{\overline{#1}}
+%\newcommand{\ZZ}{\mathbb{Z}}
+%\newcommand{\ket}[1]{|#1\rangle}
+%\newcommand{\bra}[1]{\langle #1|}
+%\newcommand{\sR}{\textrm{\tiny R}}
+%\newcommand{\sNS}{\textrm{\tiny NS}}
+%\newcommand{\tr}{\textrm{Tr}\;}
+%\newcommand{\til}[1]{\widetilde{#1}}
+\newcommand{\ti}[1]{\tilde{#1}}
+\newcommand{\df}{\textrm{d}}
+%\newcommand{\sla}[1]{#1\hspace{-0.16cm}/}
+\newcommand{\mt}[1]{\textrm{\tiny #1}}
+%\newcommand{\ph}{\phantom{1}}
+%\newcommand{\com}[1]{{\bf (#1)}}
+\newcommand{\cF}{{\cal F}}
+\newcommand{\cK}{{\cal K}}
+\newcommand{\cP}{{\cal P}}
+\newcommand{\cA}{{\cal A}}
+\newcommand{\cB}{{\cal B}}
+\newcommand{\ls}{\ell_s}
+
+\newcommand{\zD}{\ensuremath{z_{D7}}}      % Position of D7 brane
+\newcommand{\tzD}{\ensuremath{\zeta_m}}      % Position of D7 brane
+\newcommand{\trho}{\ensuremath{\tilde{\rho}}}
+% rescaled rho can also be \tilde{\rho}
+\newcommand{\tz}{\ensuremath{\tilde{z}}}
+% rescaled $z$, can also be \tilde{z}
+\newcommand{\Rl}{\ensuremath{(R/l_s)^2}}% prefactor for Wilson loops
+\newcommand{\tc}{\ensuremath{\sqrt{g_s N}}} %'t Hooft coupling
+\newcommand{\stc}{\ensuremath{(g_sN)^{\frac{1}{4}}}} % sqrt of 't Hooft coupling
+\newcommand{\mq}{\ensuremath{m_q}}      % Quark mass.
+\newcommand{\eff}{\ensuremath{\mbox{\small eff.}}}
+\newcommand{\calN}{\mbox{${\cal N}$}}
+\newcommand{\cY}{\ensuremath{{\cal Y}}}
+\newcommand{\vY}{\ensuremath{{\cal Y}^{\ell,\pm}}}
+\newcommand{\ellh}{\ensuremath{\frac{\ell}{2}}}
+\newcommand{\suLR}{\ensuremath{SU(2)_R\times SU(2)_L}}
+\newcommand{\br}{\ensuremath{\bar{\rho}}}
+\newcommand{\half}{\ensuremath{\frac{1}{2}}}
+\newcommand{\mpi}{\ensuremath{M_{\pi}}}
+\newcommand{\Lqcd}{\ensuremath{\Lambda_{\mbox{\small QCD}}}}
+
+
+\newcommand{\axidil}{\ensuremath{\chi+i\,e^{-\phi}}}
+\newcommand{\sltz}{\ensuremath{SL(2,\bbz{})}}
+\newcommand{\im}{\ensuremath{{\mathcal Im}}}
+\newcommand{\bo}{\ensuremath{\bar{1}}}
+\newcommand{\bt}{\ensuremath{\bar{2}}}
+\newcommand{\bi}{\ensuremath{\bar{\imath}}}
+\newcommand{\bj}{\ensuremath{\bar{\jmath}}}
+\newcommand{\bk}{\ensuremath{\bar{k}}}
+\newcommand{\bl}{\ensuremath{\bar{l}}}
+\newcommand{\ba}{\ensuremath{\bar{a}}}
+\newcommand{\bb}{\ensuremath{\bar{b}}}
+\newcommand{\bc}{\ensuremath{\bar{c}}}
+\newcommand{\bd}{\ensuremath{\bar{d}}}
+\newcommand{\bz}{\ensuremath{\bar{z}}}
+\newcommand{\bw}{\ensuremath{\bar{w}}}
+\newcommand{\bzeta}{\ensuremath{\bar{\zeta}}}
+\newcommand{\btau}{\ensuremath{\bar{\tau}}}
+\newcommand{\bA}{\ensuremath{\bar{A}}}
+\newcommand{\bB}{\ensuremath{\bar{B}}}
+\newcommand{\bC}{\ensuremath{\bar{C}}}
+\newcommand{\bD}{\ensuremath{\bar{D}}}
+
+
+\newcommand{\N}[1]{\ensuremath{\cN=#1}}
+\newcommand{\tK}{\ensuremath{\tilde{K}}}
+\newcommand{\Ai}{{\bf Ai}}
+\newcommand{\besselI}{{\bf I}}
+\newcommand{\besselJ}{{\bf J}}
+\newcommand{\besselK}{{\bf K}}
+\newcommand{\teta}{\ensuremath{\tilde{\eta}}}
+\newcommand{\bpartial}{\ensuremath{\bar{\partial}}}
+
+\def\lt {\tilde{\lambda}}
+\def\rt {\tilde{r}}
+\def\rhot {\tilde{\rho}}
+\def \rvac{r_\mt{vac}}
+
+\newcommand{\vn}{\ensuremath{\vec{n}}}
+\newcommand{\tl}{\ensuremath{\tilde{\lambda}}}
+\newcommand{\ct}{\ensuremath{\cos\theta}}
+\newcommand{\st}{\ensuremath{\sin\theta}}
+\newcommand{\ps}{\ensuremath{\partial_\sigma}}
+\newcommand{\tp}{\ensuremath{\dot{\theta}}}
+\newcommand{\pp}{\ensuremath{\dot{\varphi}}}
+\newcommand{\vphi}{\ensuremath{\varphi}}
+\newcommand{\pt}{\ensuremath{\partial_t}}
+\newcommand{\pta}{\ensuremath{\partial_{\tau}}}
+\newcommand{\ts}{\ensuremath{\tilde{\sigma}}}
+
+
+\newcommand{\ei}{\ensuremath{\varepsilon_i}}
+\newcommand{\sz}{\ensuremath{\sigma_0}}
+\newcommand{\NC}{\ensuremath{\mathrm{N}}}
+\newcommand{\NN}{\ensuremath{\NC^{rs}_{mn}}}
+\newcommand{\NNa}{\ensuremath{\NC^{rs}_{mn}(\ei,\sz)}}
+\newcommand{\ops}{\ensuremath{1+\sst}}
+\newcommand{\sst}{\ensuremath{\sin\frac{\sz}{2}}}
+\newcommand{\cst}{\ensuremath{\cos\frac{\sz}{2}}}
+\newcommand{\Plm}{\ensuremath{\mathrm{P}^l_m(\cos\sz)}}
+\newcommand{\sign}{\ensuremath{\mathrm{sign}}}
+\newcommand{\Pp}{\ensuremath{\hat{P}}}
+\newcommand{\Id}{\ensuremath{\mathbb{I}}}
+\newcommand{\cE}{{\cal E }}
+\newcommand{\acosh}{\ensuremath{\mbox{arccosh}}}
+\newcommand{\cotan}{\ensuremath{\mbox{cotan}}}
+\newcommand{\cU}{\ensuremath{\mathcal{U}}}
+
+\renewcommand{\Re}{\ensuremath{\mathrm{Re}}}
+\renewcommand{\Im}{\ensuremath{\mathrm{Im}}}
+
+\setlength{\parindent}{0pt}
+
+\title{One-dimensional forest fire model in the critical regime}
+
+
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In these notes, we present a method to find the cluster size distribution $n(s)$ of a one-dimensional forest fire model analytically when the model behaves critically. The cluster size distribution depends on the size in a power-law fashion. We find the exponent as well as the cutoff at which this behaviour breaks down.  
+
+\section{Model}
+Consider lattice points in one dimension with possible states : "e", "t" and "b", representing an empty site, a site with a tree or a burning tree. At each time step, the sites transition probabilistically to a new state. An empty site grows a tree $e \rightarrow t$ with probability $p$. A tree catches fire $t \rightarrow b$ with probability $f$, and the fire spreads from one site to a neighboring tree with probability $1 - g$. Conversely, the time scale for an empty site to grow a tree is $p^{-1}$ and for a tree to catch fire is $f^{-1}$. We set $g = 0$. We will be looking at equilibrium dynamics of the tree with densities $\rho_t$, $\rho_e$ and $\rho_b$.
+
+\section{Limits for critical behaviour}
+Consider a situation where a lot of trees grow between two consecutive fires. This happens when $p >> f$, or $f/p \rightarrow 0$. Such a system has large clusters. 
+
+If we look at the largest cluster with trees $s_{max}$ and call the time that it takes for this cluster to burn $T(s_{max})$, then assume very fast burn dynamics compared with tree growth so that $T(s_{max}) << p^{-1}$. 
+
+Together, we have the limits, 
+
+\begin{align}
+T(s_{max}) << p^{-1} << f^{-1}
+\end{align}
+
+So we can effectively burn entire clusters whenever there is a lightning strike at every time step so that $\rho_b$ is negligible. We also know from the limit that the model has very large clusters. 
+
+\section{Size Distribution}
+At equilibrium, the number of trees destroyed on average is comparable with the number of trees that grow so that $\rho_t$ is a constant.  
+\begin{align}
+    s_{avg} f \rho_t = p (1-\rho_t) 
+\end{align}
+This gives us the average number of trees burnt in a single lightning strike 
+\begin{align}
+    s_{avg} = \frac{p}{f}\big(\frac{1-\rho_t}{\rho_t} \big)
+\end{align}
+At equilibrium, we find that the average number of trees lost in a fire diverges with exponent $-1$, $s_{avg} \sim (\frac{f}{p})^{-1}$. 
+
+To calculate size distributions, we use the fact that our system has very large clusters. We look at some size - k segment of the cluster which is much smaller than the size of the cluster. We denote by $P_{k}(m)$ the probability that the k-cluster has m trees. This is independent of where the trees are located in the cluster since the tree growth probability is the same at every site. The size distribution $n(s)$ is one particular scenario with $k = s+2$ and $m = s$, namely with empty endpoints in the cluster filled with trees.
+\begin{align}
+    n(s) = \frac{P_{s+2}(s)}{{s+2 \choose s}}
+\end{align}
+Since fires are rare, a cluster with 0 trees slowly fills up with trees and a lightning strike only occurs after the cluster is full. Since the rate at which a configuration with m trees is created is the same as the rate at which it is destroyed, we have 
+\begin{align}
+(k - m + 1)p P_{k} (m-1) = (k-m) p P_k(m)
+\end{align}
+with $m = 1...k$. The $m = 0$ configuration satisfies 
+\begin{align}
+    k p P_{k}(0) = p(1-\rho_t)
+\end{align}
+These relations give us 
+\begin{align}
+    P_k(m) &= \frac{1}{k - m} (1 - \rho_t)  \\
+    P_k(k) &\approx 1 - (1-\rho_t)\log k  
+\end{align}
+Plugging in the expression for $n(s)$, we have 
+\begin{align}
+    n(s) &= \frac{(1 - \rho_t)}{(s+1)(s+2)}   \\
+    &\approx \frac{(1 - \rho_t)}{s^2} 
+\end{align}
+Note the exponent $-2$.
+This behaviour breaks down when the probability of a lightning strike destroying the cluster is $\cO(1)$ before the cluster is fully dense. 
+A k-cluster takes time $t(m)$ to go from 0 trees to a m-tree configuration. 
+\begin{equation}
+    p t(m) = \frac{1}{k} + \frac{1}{k-1} +\ldots  \frac{1}{k - m}
+\end{equation}
+The number of trees in the cluster as a function of the time is given by 
+\begin{equation}
+    m(t) = k (1 - e^{-pt})
+\end{equation}
+and the probability that fire strikes before $t(k)$  being $\cO(1)$ is the condition 
+\begin{equation}
+    s_{cut} \log{s_{cut}} \sim p/f
+\end{equation}
+
+
+
+\end{document}
